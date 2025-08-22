@@ -19,6 +19,8 @@ public class LambdaFunctionHandler implements RequestHandler<APIGatewayProxyRequ
     @Tracing(captureMode = CaptureMode.DISABLED)
     @Metrics(captureColdStart = true)
     public APIGatewayProxyResponseEvent handleRequest(final APIGatewayProxyRequestEvent input, final Context context) {
+        log.info("Starting");
+
         var headers = new HashMap<String, String>();
         headers.put("Content-Type", "application/json");
         headers.put("X-Custom-Header", "application/json");
