@@ -14,6 +14,8 @@ phases:
       - sam build
   post_build:
     commands:
+      - echo Deploying application
+      - sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
       - echo Build completed on `date`
 
 artifacts:
